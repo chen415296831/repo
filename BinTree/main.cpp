@@ -15,6 +15,12 @@ int main()
     BinaryTree<int> iTree;
     for(int i = 0; i < 10; i++)
         iTree.insert(i);
+	iTree.RecrPreTrav();
+	iTree.PreTrav();
+	iTree.RecrMidTrav();
+	iTree.MidTrav();
+	iTree.RecrNxtTrav();
+	iTree.NxtTrav();
     return 0;
 
 }
