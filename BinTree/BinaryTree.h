@@ -179,11 +179,9 @@ void BinaryTree<Type>::MidTrav()
 			cur = cur->leftChild;
 			continue;
 		}
-		else
-		{
-			cur = track.top();
-			track.pop();
-		}
+
+        cur = track.top();
+        track.pop();
 
 		//到这里，说明一直向左，终于没有了左孩子
 		std::cout << cur->vaule << '\t';
@@ -197,6 +195,7 @@ void BinaryTree<Type>::NxtTrav()
 {
 	std::stack<NodePtr> track;
 	NodePtr cur = Root_;
+    NodePtr lastTrav = nullptr;
 
 	while( cur || !track.empty())
 	{
@@ -206,22 +205,23 @@ void BinaryTree<Type>::NxtTrav()
 			cur = cur->leftChild;
 			continue;
 		}
-		else
-		{
-			cur = track.top();
-			track.pop();
-		}
+
+
+        if(track.top()->rightChild && lastTrav != track.top()->rightChild)
+        {
+            track.push(track.top()->rightChild);
+            cur = track.top()->rightChild->leftChild;
+        }
+        else
+        {
+            lastTrav = track.top();
+            track.pop();
+            std::cout << lastTrav->vaule << '\t';
+        }
+
 		//到这里，说明一直向左，终于没有了左孩子
 		std::cout << cur->vaule << '\t';
 
-		if(cur->rightChild)
-		{
-			cur = cur->rightChild;
-		}
-		else
-		{
-			cur = track.top()->rightChild;
-		}
 	}
 	std::cout << '\n';
 }

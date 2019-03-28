@@ -11,7 +11,7 @@
 
 int main()
 {
-    Seed();
+//    Seed();
     BinaryTree<int> iTree;
     for(int i = 0; i < 10; i++)
         iTree.insert(i);
