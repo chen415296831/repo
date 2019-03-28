@@ -9,17 +9,22 @@
 ***********************************************/
 #include "BinaryTree.h"
 
+void printValue(int a)
+{
+	std::cout << a << '\t';
+}
 int main()
 {
-//    Seed();
+    Seed();
     BinaryTree<int> iTree;
     for(int i = 0; i < 10; i++)
         iTree.insert(i);
-	iTree.RecrPreTrav();
+	auto vistFunc = [](int a) { std::cout << a << '\t'; };
+	iTree.RecrPreTrav(printValue);
 	iTree.PreTrav();
-	iTree.RecrMidTrav();
+	iTree.RecrMidTrav(printValue);
 	iTree.MidTrav();
-	iTree.RecrNxtTrav();
+	iTree.RecrNxtTrav(printValue);
 	iTree.NxtTrav();
     return 0;
 
