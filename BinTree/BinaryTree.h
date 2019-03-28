@@ -81,16 +81,16 @@ private:
 	void RecrMidTravNode(NodePtr ptr)
 	{
 		if(!ptr) return;
-		RecrPreTravNode(ptr->leftChild);
+		RecrMidTravNode(ptr->leftChild);
 		std::cout << ptr->vaule <<'\t';
-		RecrPreTravNode(ptr->rightChild);
+		RecrMidTravNode(ptr->rightChild);
 	}
 
 	void RecrNxtTravNode(NodePtr ptr)
 	{
 		if(!ptr) return;
-		RecrPreTravNode(ptr->leftChild);
-		RecrPreTravNode(ptr->rightChild);
+		RecrNxtTravNode(ptr->leftChild);
+		RecrNxtTravNode(ptr->rightChild);
 		std::cout << ptr->vaule <<'\t';
 	}
 
@@ -210,7 +210,7 @@ void BinaryTree<Type>::NxtTrav()
         if(track.top()->rightChild && lastTrav != track.top()->rightChild)
         {
             track.push(track.top()->rightChild);
-            cur = track.top()->rightChild->leftChild;
+            cur = track.top()->leftChild;
         }
         else
         {
@@ -218,10 +218,6 @@ void BinaryTree<Type>::NxtTrav()
             track.pop();
             std::cout << lastTrav->vaule << '\t';
         }
-
-		//到这里，说明一直向左，终于没有了左孩子
-		std::cout << cur->vaule << '\t';
-
 	}
 	std::cout << '\n';
 }
