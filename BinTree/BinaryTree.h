@@ -60,9 +60,12 @@ public:
         :Root_(nullptr),Heigth_(0), Size_(0)
     {}
 
-	void RecrPreTrav();
-	void RecrMidTrav();
-	void RecrNxtTrav();
+	template<typename Unary>
+	void RecrPreTrav(Unary& fun);
+	template<typename Unary>
+	void RecrMidTrav(Unary& fun);
+	template<typename Unary>
+	void RecrNxtTrav(Unary& fun);
 	void PreTrav();
 	void MidTrav();
 	void NxtTrav();
@@ -71,27 +74,33 @@ public:
     ~BinaryTree();
 
 private:
-	void RecrPreTravNode(NodePtr ptr)
+	template<typename Unary>
+	void RecrPreTravNode(NodePtr ptr, Unary& fun)
 	{
 		if(!ptr) return;
-		std::cout << ptr->vaule <<'\t';
-		RecrPreTravNode(ptr->leftChild);
-		RecrPreTravNode(ptr->rightChild);
+		//std::cout << ptr->vaule <<'\t';
+		fun(ptr->vaule);
+		RecrPreTravNode(ptr->leftChild, fun);
+		RecrPreTravNode(ptr->rightChild, fun);
 	}
-	void RecrMidTravNode(NodePtr ptr)
+	template<typename Unary>
+	void RecrMidTravNode(NodePtr ptr, Unary& fun)
 	{
 		if(!ptr) return;
-		RecrPreTravNode(ptr->leftChild);
-		std::cout << ptr->vaule <<'\t';
-		RecrPreTravNode(ptr->rightChild);
+		RecrMidTravNode(ptr->leftChild, fun);
+		fun(ptr->vaule);
+		//std::cout << ptr->vaule <<'\t';
+		RecrMidTravNode(ptr->rightChild, fun);
 	}
 
-	void RecrNxtTravNode(NodePtr ptr)
+	template<typename Unary>
+	void RecrNxtTravNode(NodePtr ptr, Unary& fun)
 	{
 		if(!ptr) return;
-		RecrPreTravNode(ptr->leftChild);
-		RecrPreTravNode(ptr->rightChild);
-		std::cout << ptr->vaule <<'\t';
+		RecrNxtTravNode(ptr->leftChild, fun);
+		RecrNxtTravNode(ptr->rightChild, fun);
+		//std::cout << ptr->vaule <<'\t';
+		fun(ptr->vaule);
 	}
 
 NodePtr     Root_;
@@ -140,9 +149,10 @@ void BinaryTree<Type>::insert (Type val)
 }
 
 template<typename Type>
-void BinaryTree<Type>::RecrPreTrav()
+template<typename Unary>
+void BinaryTree<Type>::RecrPreTrav( Unary& fun)
 {
-	RecrPreTravNode(Root_);
+	RecrPreTravNode(Root_, fun);
 	std::cout << '\n';
 }
 
@@ -210,7 +220,7 @@ void BinaryTree<Type>::NxtTrav()
         if(track.top()->rightChild && lastTrav != track.top()->rightChild)
         {
             track.push(track.top()->rightChild);
-            cur = track.top()->rightChild->leftChild;
+            cur = track.top()->leftChild;
         }
         else
         {
@@ -218,28 +228,42 @@ void BinaryTree<Type>::NxtTrav()
             track.pop();
             std::cout << lastTrav->vaule << '\t';
         }
-
-		//到这里，说明一直向左，终于没有了左孩子
-		std::cout << cur->vaule << '\t';
-
 	}
 	std::cout << '\n';
 }
 
 template<typename Type>
-void BinaryTree<Type>::RecrMidTrav()
+template<typename Unary>
+void BinaryTree<Type>::RecrMidTrav(Unary& fun)
 {
-	RecrMidTravNode(Root_);
+	RecrMidTravNode(Root_, fun);
 	std::cout << '\n';
 }
 template<typename Type>
-void BinaryTree<Type>::RecrNxtTrav()
+template<typename Unary>
+void BinaryTree<Type>::RecrNxtTrav( Unary& fun)
 {
-	RecrNxtTravNode(Root_);
+	RecrNxtTravNode(Root_, fun);
 	std::cout << '\n';
 }
 
 template<typename Type>
 BinaryTree<Type>::~BinaryTree()
 {
+	std::stack<NodePtr> track;
+	NodePtr cur = Root_;
+	while(cur || !track.empty()) //只要当前节点访问，或者栈不为空，就一直访问
+	{
+		if(cur) 
+		{
+			track.push(cur);
+			cur = cur->leftChild;
+			continue;
+		}
+
+        cur = track.top()->rightChild;
+
+		delete track.top();
+		track.pop();
+	}
 }
