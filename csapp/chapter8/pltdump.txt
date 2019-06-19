@@ -1,0 +1,245 @@
+
+/lib/x86_64-linux-gnu/libc.so.6:     file format elf64-x86-64
+
+
+Disassembly of section .plt:
+
+0000000000022000 <*ABS*+0x9b230@plt-0x10>:
+   22000:	ff 35 02 20 1c 00    	pushq  0x1c2002(%rip)        # 1e4008 <h_errlist@@GLIBC_2.2.5+0xf68>
+   22006:	ff 25 04 20 1c 00    	jmpq   *0x1c2004(%rip)        # 1e4010 <h_errlist@@GLIBC_2.2.5+0xf70>
+   2200c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000022010 <*ABS*+0x9b230@plt>:
+   22010:	ff 25 02 20 1c 00    	jmpq   *0x1c2002(%rip)        # 1e4018 <h_errlist@@GLIBC_2.2.5+0xf78>
+   22016:	68 2e 00 00 00       	pushq  $0x2e
+   2201b:	e9 e0 ff ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022020 <*ABS*+0xcc850@plt>:
+   22020:	ff 25 fa 1f 1c 00    	jmpq   *0x1c1ffa(%rip)        # 1e4020 <h_errlist@@GLIBC_2.2.5+0xf80>
+   22026:	68 2d 00 00 00       	pushq  $0x2d
+   2202b:	e9 d0 ff ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022030 <*ABS*+0x9a370@plt>:
+   22030:	ff 25 f2 1f 1c 00    	jmpq   *0x1c1ff2(%rip)        # 1e4028 <h_errlist@@GLIBC_2.2.5+0xf88>
+   22036:	68 2c 00 00 00       	pushq  $0x2c
+   2203b:	e9 c0 ff ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022040 <*ABS*+0xb7c40@plt>:
+   22040:	ff 25 ea 1f 1c 00    	jmpq   *0x1c1fea(%rip)        # 1e4030 <h_errlist@@GLIBC_2.2.5+0xf90>
+   22046:	68 2b 00 00 00       	pushq  $0x2b
+   2204b:	e9 b0 ff ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022050 <realloc@plt>:
+   22050:	ff 25 e2 1f 1c 00    	jmpq   *0x1c1fe2(%rip)        # 1e4038 <realloc@@GLIBC_2.2.5+0x14da88>
+   22056:	68 00 00 00 00       	pushq  $0x0
+   2205b:	e9 a0 ff ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022060 <*ABS*+0x9b600@plt>:
+   22060:	ff 25 da 1f 1c 00    	jmpq   *0x1c1fda(%rip)        # 1e4040 <h_errlist@@GLIBC_2.2.5+0xfa0>
+   22066:	68 2a 00 00 00       	pushq  $0x2a
+   2206b:	e9 90 ff ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022070 <*ABS*+0x9ccb0@plt>:
+   22070:	ff 25 d2 1f 1c 00    	jmpq   *0x1c1fd2(%rip)        # 1e4048 <h_errlist@@GLIBC_2.2.5+0xfa8>
+   22076:	68 29 00 00 00       	pushq  $0x29
+   2207b:	e9 80 ff ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022080 <*ABS*+0x9b4b0@plt>:
+   22080:	ff 25 ca 1f 1c 00    	jmpq   *0x1c1fca(%rip)        # 1e4050 <h_errlist@@GLIBC_2.2.5+0xfb0>
+   22086:	68 28 00 00 00       	pushq  $0x28
+   2208b:	e9 70 ff ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022090 <__tls_get_addr@plt>:
+   22090:	ff 25 c2 1f 1c 00    	jmpq   *0x1c1fc2(%rip)        # 1e4058 <__tls_get_addr@GLIBC_2.3>
+   22096:	68 01 00 00 00       	pushq  $0x1
+   2209b:	e9 60 ff ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+00000000000220a0 <*ABS*+0x9b4e0@plt>:
+   220a0:	ff 25 ba 1f 1c 00    	jmpq   *0x1c1fba(%rip)        # 1e4060 <h_errlist@@GLIBC_2.2.5+0xfc0>
+   220a6:	68 27 00 00 00       	pushq  $0x27
+   220ab:	e9 50 ff ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+00000000000220b0 <*ABS*+0x9a730@plt>:
+   220b0:	ff 25 b2 1f 1c 00    	jmpq   *0x1c1fb2(%rip)        # 1e4068 <h_errlist@@GLIBC_2.2.5+0xfc8>
+   220b6:	68 26 00 00 00       	pushq  $0x26
+   220bb:	e9 40 ff ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+00000000000220c0 <*ABS*+0xb7d50@plt>:
+   220c0:	ff 25 aa 1f 1c 00    	jmpq   *0x1c1faa(%rip)        # 1e4070 <h_errlist@@GLIBC_2.2.5+0xfd0>
+   220c6:	68 25 00 00 00       	pushq  $0x25
+   220cb:	e9 30 ff ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+00000000000220d0 <memalign@plt>:
+   220d0:	ff 25 a2 1f 1c 00    	jmpq   *0x1c1fa2(%rip)        # 1e4078 <memalign@@GLIBC_2.2.5+0x14d5f8>
+   220d6:	68 02 00 00 00       	pushq  $0x2
+   220db:	e9 20 ff ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+00000000000220e0 <_dl_exception_create@plt>:
+   220e0:	ff 25 9a 1f 1c 00    	jmpq   *0x1c1f9a(%rip)        # 1e4080 <_dl_exception_create@GLIBC_PRIVATE>
+   220e6:	68 03 00 00 00       	pushq  $0x3
+   220eb:	e9 10 ff ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+00000000000220f0 <*ABS*+0x9b1a0@plt>:
+   220f0:	ff 25 92 1f 1c 00    	jmpq   *0x1c1f92(%rip)        # 1e4088 <h_errlist@@GLIBC_2.2.5+0xfe8>
+   220f6:	68 24 00 00 00       	pushq  $0x24
+   220fb:	e9 00 ff ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022100 <*ABS*+0x9b5b0@plt>:
+   22100:	ff 25 8a 1f 1c 00    	jmpq   *0x1c1f8a(%rip)        # 1e4090 <h_errlist@@GLIBC_2.2.5+0xff0>
+   22106:	68 23 00 00 00       	pushq  $0x23
+   2210b:	e9 f0 fe ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022110 <*ABS*+0xa4190@plt>:
+   22110:	ff 25 82 1f 1c 00    	jmpq   *0x1c1f82(%rip)        # 1e4098 <h_errlist@@GLIBC_2.2.5+0xff8>
+   22116:	68 22 00 00 00       	pushq  $0x22
+   2211b:	e9 e0 fe ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022120 <__tunable_get_val@plt>:
+   22120:	ff 25 7a 1f 1c 00    	jmpq   *0x1c1f7a(%rip)        # 1e40a0 <__tunable_get_val@GLIBC_PRIVATE>
+   22126:	68 04 00 00 00       	pushq  $0x4
+   2212b:	e9 d0 fe ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022130 <*ABS*+0x9a340@plt>:
+   22130:	ff 25 72 1f 1c 00    	jmpq   *0x1c1f72(%rip)        # 1e40a8 <h_errlist@@GLIBC_2.2.5+0x1008>
+   22136:	68 21 00 00 00       	pushq  $0x21
+   2213b:	e9 c0 fe ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022140 <*ABS*+0x99e90@plt>:
+   22140:	ff 25 6a 1f 1c 00    	jmpq   *0x1c1f6a(%rip)        # 1e40b0 <h_errlist@@GLIBC_2.2.5+0x1010>
+   22146:	68 20 00 00 00       	pushq  $0x20
+   2214b:	e9 b0 fe ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022150 <*ABS*+0x9a490@plt>:
+   22150:	ff 25 62 1f 1c 00    	jmpq   *0x1c1f62(%rip)        # 1e40b8 <h_errlist@@GLIBC_2.2.5+0x1018>
+   22156:	68 1f 00 00 00       	pushq  $0x1f
+   2215b:	e9 a0 fe ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022160 <*ABS*+0xb82d0@plt>:
+   22160:	ff 25 5a 1f 1c 00    	jmpq   *0x1c1f5a(%rip)        # 1e40c0 <h_errlist@@GLIBC_2.2.5+0x1020>
+   22166:	68 1e 00 00 00       	pushq  $0x1e
+   2216b:	e9 90 fe ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022170 <*ABS*+0xb82d0@plt>:
+   22170:	ff 25 52 1f 1c 00    	jmpq   *0x1c1f52(%rip)        # 1e40c8 <h_errlist@@GLIBC_2.2.5+0x1028>
+   22176:	68 1d 00 00 00       	pushq  $0x1d
+   2217b:	e9 80 fe ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022180 <*ABS*+0xb9510@plt>:
+   22180:	ff 25 4a 1f 1c 00    	jmpq   *0x1c1f4a(%rip)        # 1e40d0 <h_errlist@@GLIBC_2.2.5+0x1030>
+   22186:	68 1c 00 00 00       	pushq  $0x1c
+   2218b:	e9 70 fe ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022190 <*ABS*+0x9b6a0@plt>:
+   22190:	ff 25 42 1f 1c 00    	jmpq   *0x1c1f42(%rip)        # 1e40d8 <h_errlist@@GLIBC_2.2.5+0x1038>
+   22196:	68 1b 00 00 00       	pushq  $0x1b
+   2219b:	e9 60 fe ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+00000000000221a0 <*ABS*+0x99f30@plt>:
+   221a0:	ff 25 3a 1f 1c 00    	jmpq   *0x1c1f3a(%rip)        # 1e40e0 <h_errlist@@GLIBC_2.2.5+0x1040>
+   221a6:	68 1a 00 00 00       	pushq  $0x1a
+   221ab:	e9 50 fe ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+00000000000221b0 <*ABS*+0xb8220@plt>:
+   221b0:	ff 25 32 1f 1c 00    	jmpq   *0x1c1f32(%rip)        # 1e40e8 <h_errlist@@GLIBC_2.2.5+0x1048>
+   221b6:	68 19 00 00 00       	pushq  $0x19
+   221bb:	e9 40 fe ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+00000000000221c0 <*ABS*+0x9b560@plt>:
+   221c0:	ff 25 2a 1f 1c 00    	jmpq   *0x1c1f2a(%rip)        # 1e40f0 <h_errlist@@GLIBC_2.2.5+0x1050>
+   221c6:	68 18 00 00 00       	pushq  $0x18
+   221cb:	e9 30 fe ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+00000000000221d0 <_dl_find_dso_for_object@plt>:
+   221d0:	ff 25 22 1f 1c 00    	jmpq   *0x1c1f22(%rip)        # 1e40f8 <_dl_find_dso_for_object@GLIBC_PRIVATE>
+   221d6:	68 05 00 00 00       	pushq  $0x5
+   221db:	e9 20 fe ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+00000000000221e0 <*ABS*+0x99f60@plt>:
+   221e0:	ff 25 1a 1f 1c 00    	jmpq   *0x1c1f1a(%rip)        # 1e4100 <h_errlist@@GLIBC_2.2.5+0x1060>
+   221e6:	68 17 00 00 00       	pushq  $0x17
+   221eb:	e9 10 fe ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+00000000000221f0 <*ABS*+0x9a370@plt>:
+   221f0:	ff 25 12 1f 1c 00    	jmpq   *0x1c1f12(%rip)        # 1e4108 <h_errlist@@GLIBC_2.2.5+0x1068>
+   221f6:	68 16 00 00 00       	pushq  $0x16
+   221fb:	e9 00 fe ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022200 <*ABS*+0xb7c40@plt>:
+   22200:	ff 25 0a 1f 1c 00    	jmpq   *0x1c1f0a(%rip)        # 1e4110 <h_errlist@@GLIBC_2.2.5+0x1070>
+   22206:	68 15 00 00 00       	pushq  $0x15
+   2220b:	e9 f0 fd ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022210 <calloc@plt>:
+   22210:	ff 25 02 1f 1c 00    	jmpq   *0x1c1f02(%rip)        # 1e4118 <calloc@@GLIBC_2.2.5+0x14d5d8>
+   22216:	68 06 00 00 00       	pushq  $0x6
+   2221b:	e9 e0 fd ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022220 <*ABS*+0x9b300@plt>:
+   22220:	ff 25 fa 1e 1c 00    	jmpq   *0x1c1efa(%rip)        # 1e4120 <h_errlist@@GLIBC_2.2.5+0x1080>
+   22226:	68 14 00 00 00       	pushq  $0x14
+   2222b:	e9 d0 fd ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022230 <*ABS*+0x99ed0@plt>:
+   22230:	ff 25 f2 1e 1c 00    	jmpq   *0x1c1ef2(%rip)        # 1e4128 <h_errlist@@GLIBC_2.2.5+0x1088>
+   22236:	68 13 00 00 00       	pushq  $0x13
+   2223b:	e9 c0 fd ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022240 <*ABS*+0x9a3d0@plt>:
+   22240:	ff 25 ea 1e 1c 00    	jmpq   *0x1c1eea(%rip)        # 1e4130 <h_errlist@@GLIBC_2.2.5+0x1090>
+   22246:	68 12 00 00 00       	pushq  $0x12
+   2224b:	e9 b0 fd ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022250 <*ABS*+0x9b1d0@plt>:
+   22250:	ff 25 e2 1e 1c 00    	jmpq   *0x1c1ee2(%rip)        # 1e4138 <h_errlist@@GLIBC_2.2.5+0x1098>
+   22256:	68 11 00 00 00       	pushq  $0x11
+   2225b:	e9 a0 fd ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022260 <*ABS*+0x9b3a0@plt>:
+   22260:	ff 25 da 1e 1c 00    	jmpq   *0x1c1eda(%rip)        # 1e4140 <h_errlist@@GLIBC_2.2.5+0x10a0>
+   22266:	68 10 00 00 00       	pushq  $0x10
+   2226b:	e9 90 fd ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022270 <*ABS*+0xb7c70@plt>:
+   22270:	ff 25 d2 1e 1c 00    	jmpq   *0x1c1ed2(%rip)        # 1e4148 <h_errlist@@GLIBC_2.2.5+0x10a8>
+   22276:	68 0f 00 00 00       	pushq  $0xf
+   2227b:	e9 80 fd ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022280 <*ABS*+0xb8220@plt>:
+   22280:	ff 25 ca 1e 1c 00    	jmpq   *0x1c1eca(%rip)        # 1e4150 <h_errlist@@GLIBC_2.2.5+0x10b0>
+   22286:	68 0e 00 00 00       	pushq  $0xe
+   2228b:	e9 70 fd ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+0000000000022290 <*ABS*+0x9cc80@plt>:
+   22290:	ff 25 c2 1e 1c 00    	jmpq   *0x1c1ec2(%rip)        # 1e4158 <h_errlist@@GLIBC_2.2.5+0x10b8>
+   22296:	68 0d 00 00 00       	pushq  $0xd
+   2229b:	e9 60 fd ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+00000000000222a0 <*ABS*+0xcc770@plt>:
+   222a0:	ff 25 ba 1e 1c 00    	jmpq   *0x1c1eba(%rip)        # 1e4160 <h_errlist@@GLIBC_2.2.5+0x10c0>
+   222a6:	68 0c 00 00 00       	pushq  $0xc
+   222ab:	e9 50 fd ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+00000000000222b0 <*ABS*+0x9a460@plt>:
+   222b0:	ff 25 b2 1e 1c 00    	jmpq   *0x1c1eb2(%rip)        # 1e4168 <h_errlist@@GLIBC_2.2.5+0x10c8>
+   222b6:	68 0b 00 00 00       	pushq  $0xb
+   222bb:	e9 40 fd ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+00000000000222c0 <*ABS*+0x99e60@plt>:
+   222c0:	ff 25 aa 1e 1c 00    	jmpq   *0x1c1eaa(%rip)        # 1e4170 <h_errlist@@GLIBC_2.2.5+0x10d0>
+   222c6:	68 0a 00 00 00       	pushq  $0xa
+   222cb:	e9 30 fd ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+00000000000222d0 <*ABS*+0x9b510@plt>:
+   222d0:	ff 25 a2 1e 1c 00    	jmpq   *0x1c1ea2(%rip)        # 1e4178 <h_errlist@@GLIBC_2.2.5+0x10d8>
+   222d6:	68 09 00 00 00       	pushq  $0x9
+   222db:	e9 20 fd ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+00000000000222e0 <*ABS*+0x9a430@plt>:
+   222e0:	ff 25 9a 1e 1c 00    	jmpq   *0x1c1e9a(%rip)        # 1e4180 <h_errlist@@GLIBC_2.2.5+0x10e0>
+   222e6:	68 08 00 00 00       	pushq  $0x8
+   222eb:	e9 10 fd ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
+
+00000000000222f0 <*ABS*+0x9b230@plt>:
+   222f0:	ff 25 92 1e 1c 00    	jmpq   *0x1c1e92(%rip)        # 1e4188 <h_errlist@@GLIBC_2.2.5+0x10e8>
+   222f6:	68 07 00 00 00       	pushq  $0x7
+   222fb:	e9 00 fd ff ff       	jmpq   22000 <__h_errno@@GLIBC_PRIVATE+0x21f8c>
