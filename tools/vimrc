@@ -1,0 +1,217 @@
+" 语法高亮
+set syntax=on
+set nu
+" Tab键的宽度
+set tabstop=4
+" " 统一缩进为4
+set softtabstop=4
+set shiftwidth=4
+set hlsearch
+set nowrapscan
+set splitright
+set splitbelow
+let Tlist_Show_One_File = 1            "不同时显示多个文件的tag，只显示当前文件的
+let Tlist_Exit_OnlyWindow = 1          "如果taglist窗口是最后一个窗口，则退出vim
+
+"映射leader键到';', 默认'\'是leader键
+let mapleader = ";"
+nmap  <leader>r <C-w>h<CR>
+nmap  <leader>l <C-w>l<CR>
+
+set hidden
+
+" #####YouCompleteMe Configure   
+let g:ycm_use_clangd = 0
+let g:ycm_server_python_interpreter='/usr/bin/python'
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'  
+" 自动补全配置  
+set completeopt=longest,menu    "让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)  
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif "离开插入模式后自动关闭预览窗口  
+"上下左右键的行为 会显示其他信息  
+"inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"  
+"inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"  
+"inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"  
+"inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"  
+
+"youcompleteme  默认tab  s-tab 和自动补全冲突  
+"let g:ycm_key_list_select_completion=['<c-n>']  
+let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_key_list_select_completion=['<TAB>','<Down>']  
+let g:ycm_key_list_previous_completion=['<c-p>']  
+let g:ycm_key_list_stop_completion = ['<C-y>']
+let g:ycm_confirm_extra_conf=1 "关闭加载.ycm_extra_conf.py提示
+let g:ycm_key_invoke_completion = '<C-Space>'
+let g:ycm_collect_identifiers_from_tags_files=1 " 开启 YCM 基于标签引擎  
+let g:ycm_min_num_of_chars_for_completion=2 " 从第2个键入字符就开始罗列匹配项  
+let g:ycm_min_num_identifier_candidate_chars = 2
+let g:ycm_cache_omnifunc=0  " 禁止缓存匹配项,每次都重新生成匹配项  
+let g:ycm_seed_identifiers_with_syntax=1    " 语法关键字补全  
+let g:ycm_auto_trigger = 1 " in c++ '.' or ->
+let g:ycm_enable_diagnostic_highlighting = 0 
+let g:ycm_show_diagnostics_ui = 1
+let g:ycm_semantic_triggers =  {
+			\ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+			\ 'cs,lua,javascript': ['re!\w{2}'],
+			\ }
+"let g:ycm_filetype_whitelist = { 
+"			\ "c":1,
+"			\ "cpp":1, 
+"			\ "objc":1,
+"                        。。。。
+"			\ "sh":1,
+"			\ "zsh":1,
+"			\ "zimbu":1,
+"			\ }
+"
+nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>    "force recomile with syntastic  
+"在注释输入中也能补全  
+let g:ycm_complete_in_comments = 1  
+"在字符串输入中也能补全  
+let g:ycm_complete_in_strings = 1  
+"注释和字符串中的文字也会被收入补全  
+let g:ycm_collect_identifiers_from_comments_and_strings = 1  
+"let g:clang_user_options='|| exit 0'  
+" #####YouCompleteMe Configure  
+
+"vim-airline 
+set t_Co=256
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#formatter = 'default'
+"let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+nmap <leader>a <Plug>AirlineSelectPrevTab
+nmap <leader>f <Plug>AirlineSelectNextTab
+"end vim-airline
+
+"echodoc
+set noshowmode
+v:completed_item {}
+
+set nocompatible              " be iMproved, required
+filetype off " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+"Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'echodoc.vim'
+
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
+
+"if has("cscope") 
+"  set csprg=/usr/bin/cscope
+"  set cst
+"  set csto=0
+"  set nocsverb
+" " 1;5S
+" " add any database in current directory 
+"  if filereadable("cscope.out")
+"    cs add cscope.out
+" " else add databaes pointed to by enviroment 
+"  elseif $CSCOPE_DB != "" 
+"    cs add $CSCOPE_BD
+"  endif
+"  set csverb
+"endif
+
+function! LoadCscope()
+  set cst
+  set csto=0
+  set nocsverb
+  let db = findfile("cscope.out", ".;")
+  if (!empty(db))
+    let path = strpart(db, 0, match(db, "/cscope.out$"))
+    set nocscopeverbose " suppress 'duplicate connection' error
+    exe "cs add " . db . " " . path
+    set cscopeverbose
+  " else add the database pointed to by environment variable 
+  elseif $CSCOPE_DB != "" 
+    cs add $CSCOPE_DB
+  endif
+endfunction
+au BufEnter /* call LoadCscope()
+
+nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>	
+nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>	
+nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>	
+nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>	
+nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>	
+nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>	
+nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+nmap <F5> :!find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files<CR> 
+                        \ :!cscope -b -i cscope.files -f cscope.out<CR> 
+                        \ :cs reset<CR>
+set pastetoggle=<F2>
+function! ToggleSyntax()
+   if exists("g:syntax_on")
+      syntax off
+   else
+      syntax enable
+   endif
+endfunction
+ 
+
+
+au BufRead * if search('\M-*- C++ -*-', 'n', 1) | setlocal ft=cpp | endif
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+nmap <C-k> :CtrlPMRU<CR>
+let g:ctrlp_working_path_mode = 'c'
+hi Search cterm=NONE ctermfg=black  ctermbg=yellow

@@ -1,5 +1,6 @@
 #include <string>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 class foobase
@@ -25,6 +26,7 @@ public:
 
 int main()
 {
+	std::vector<int> a = {1,0};
 	string name = {"shuaijun" };
 	string psudonym = {"nangua"};
 	foo f1(name,25);
