@@ -1,6 +1,7 @@
 #include <vector>
 #include <map>
 #include <utility>
+#include <unordered_map>
 #include <boost/assert.hpp>
 
 using namespace std;
@@ -9,7 +10,7 @@ vector<int> nums = {2, 7, 11, 15};
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        map<const int,int> patern; 
+        unordered_map<int,int> patern; 
         int idx = 0;
         for(int v : nums)
             patern.insert(make_pair(v, idx++));
