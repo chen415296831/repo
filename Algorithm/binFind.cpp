@@ -4,7 +4,8 @@
 //找到返回其索引；否则，返回-1
 int binFind(std::vector<int>& nums, int target)
 {
-    std::size_t left = 0, right = nums.size()-1 , index = -1;
+	//必须使用有符号的
+    int  left = 0, right = nums.size()-1 , index = -1;
     while(left <= right)
     {
         std::size_t mid = (left + right)/2;
@@ -25,6 +26,7 @@ int binFind(std::vector<int>& nums, int target)
 int main()
 {
 	std::vector<int> nums = {1, 3, 5, 7, 9}; //奇数个元素
+	assert(binFind(nums, 0) == -1);
 	assert(binFind(nums, 1) == 0);
 	assert(binFind(nums, 3) == 1);
 	assert(binFind(nums, 5) == 2);
@@ -37,5 +39,5 @@ int main()
 	assert(binFind(nums, 5) == 2);
 	assert(binFind(nums, 7) == 3);
 	assert(binFind(nums, 9) == 4);
-	assert(binFind(nums, 11) == 5);
+	assert(binFind(nums, 10) == 5);
 }
