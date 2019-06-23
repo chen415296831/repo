@@ -5,7 +5,13 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <functional>
 using namespace std;
+//template<
+//    class Key,	//元素类型
+//    class Compare = std::less<Key>,	//std::less，元素值较小的在前，我们可以替换成greater
+//    class Allocator = std::allocator<Key>
+//> class set;
 int main()
 {
 	set<int> values_;
@@ -14,9 +20,16 @@ int main()
 	values_.insert(2);
 	values_.insert(-1);
 
-	//红黑树，终须遍历，begin就是最小的，越往后越大
+	//红黑树，中序遍历，begin就是最小的，越往后越大
 	for(auto& v : values_)
-		std::cout << v << std::endl;
+		std::cout << v << " ";
+	std::cout << std::endl;
+	
+	//顺序反过来
+	set<int, greater<int>>  rvalues_(values_.begin(), values_.end());
+	for(auto& v : rvalues_)
+		std::cout << v << " ";
+	std::cout << std::endl;
 
 	set<pair<int, string>> pairs;
 
