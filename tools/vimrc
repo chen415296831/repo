@@ -94,6 +94,10 @@ nmap <leader>a <Plug>AirlineSelectPrevTab
 nmap <leader>f <Plug>AirlineSelectNextTab
 "end vim-airline
 
+nmap <Tab> :bn<cr>
+nmap <C-Tab> :bp<cr>
+nmap <F11> :Tlist<CR>
+
 "echodoc
 set noshowmode
 v:completed_item {}
