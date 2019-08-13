@@ -1,0 +1,5 @@
+本地的package最好放在一个src的文件中
+每个文件夹表示一个package
+import package表示可以使用这个包，使用包中的东西，需要加报名做前缀，和c++中的using namespace还不一样
+main是顶层的包
+
